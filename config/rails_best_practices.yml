@@ -8,7 +8,7 @@ DryBundlerInCapistranoCheck: { }
 IsolateSeedDataCheck: { }
 KeepFindersOnTheirOwnModelCheck: { }
 LawOfDemeterCheck: { }
-#LongLineCheck: { max_line_length: 80 }
+LongLineCheck: { max_line_length: 80 }
 MoveCodeIntoControllerCheck: { }
 MoveCodeIntoHelperCheck: { array_count: 3 }
 MoveCodeIntoModelCheck: { use_count: 2 }
@@ -19,7 +19,7 @@ NotRescueExceptionCheck: { }
 NotUseDefaultRouteCheck: { }
 NotUseTimeAgoInWordsCheck: { }
 OveruseRouteCustomizationsCheck: { customize_count: 3 }
-ProtectMassAssignmentCheck: { }
+#ProtectMassAssignmentCheck: { }
 RemoveEmptyHelpersCheck: { }
 #RemoveTabCheck: { }
 RemoveTrailingWhitespaceCheck: { }
