@@ -1,0 +1,51 @@
+<%= render :partial => "ournaropa_decisions/mock_ups/render_author",
+:locals => {:author => decision.author} %>
+
+<div class="decision z-depth-2 link">
+  <div class="row">
+    <div class="col l10">
+
+      <%= link_to decision_1_path, :class => "open-decision" do %>
+        <div class="content-wrapper">
+
+          <div class="content grey-text">
+            <p class="time right">
+              <i class="material-icons tiny">schedule</i>
+              <%= time_ago_in_words(decision.ends_at) %> left<br/>
+            </p>
+            <h3 class="grey-text text-darken-4 no-margin-top">
+              <%= decision.title %>
+            </h3>
+            <p class=""><%= decision.description %></p>
+          </div>
+
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="col l2">
+
+      <div class="actions-wrapper center-text">
+        <div class="actions grey-text">
+          <p class="green-text">
+            <button class="waves-effect waves-light btn-floating btn-large
+              green">
+              <i class="material-icons">thumb_up</i>
+            </button>
+            <span class="upvotes"><%= decision.upvotes %></span>
+          </p>
+          <p class="red-text">
+            <button class="waves-effect waves-light btn-floating btn-large
+              red">
+              <i class="material-icons">thumb_down</i>
+            </button>
+            <span class="upvotes"><%= decision.downvotes %></span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

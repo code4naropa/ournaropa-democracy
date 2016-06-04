@@ -1,0 +1,91 @@
+<div id="ournaropa_planner_decisions" class="index container">
+  
+  <p id="notice"><%= notice %></p>
+
+  <div class="row">
+        
+  <h1>Official Decisions</h1>
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+    <% @decisions.each do |decision| %>
+      
+        <li>
+          <div class="collapsible-header">
+            <div class="row">
+              <div class="col s8">
+                <h5><%= decision.title %></h5>
+                <p class="author"><%= decision.author %></p>
+              </div>
+              <div class="col s4">
+                <a class="waves-effect waves-light btn-floating btn-large red right"><i class="material-icons">thumb_down</i></a>
+                <a class="waves-effect waves-light btn-floating btn-large green right"><i class="material-icons">thumb_up</i></a>
+              </div>
+            </div>
+          </div>
+          <div class="collapsible-body"><p><%= decision.description.gsub("\n", "<br/>").html_safe %></p></div>
+        </li>
+    
+    <% end %>
+    </ul>
+    
+    
+    <!--<table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Author</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @decisions.each do |decision| %>
+          <tr>
+            <td><%= decision.title %></td>
+            <td><%= decision.description %></td>
+            <td><%= decision.author %></td>
+            <td><%= link_to 'Show', decision %></td>
+            <td><%= link_to 'Edit', edit_decision_path(decision) %></td>
+            <td><%= link_to 'Destroy', decision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>-->
+
+  </div>
+  
+  
+    <div class="divider"></div>
+
+  <h1>Community Proposals</h1>
+  
+  <div class="row">
+  
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header">
+          <div class="row">
+            <div class="col s8">
+              <h5>Let's Make Decisions Together as a Community</h5>
+              <p class="author">Finn Woelm</p>
+            </div>
+            <div class="col s4">
+              <a class="waves-effect waves-light btn-floating btn-large red right"><i class="material-icons">thumb_down</i></a>
+              <a class="waves-effect waves-light btn-floating btn-large green right"><i class="material-icons">thumb_up</i></a>
+            </div>
+          </div>
+        </div>
+        <div class="collapsible-body"><p>blablabla</p></div>
+      </li>
+      </ul>
+    
+  </div>
+
+  
+  <%#= link_to 'New Decision', new_decision_path 
+%>
+
+
+</div>

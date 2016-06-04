@@ -1,0 +1,28 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+.collapsible-header {
+  padding: 20px;
+  
+  h1,h2,h3,h4,h5,p { margin-bottom: 0px; margin-top: 0px;}
+  
+  p.author { font-style:italic; color: gray;}
+  
+  .row { margin-bottom: 0px;}
+  
+  a.btn-floating > i {
+    width: inherit;
+  }
+  
+  a.btn-floating {
+    //margin-top: -8px;
+    margin-left: 20px;
+  }
+}
+
+.row.form {
+  .row {margin-bottom:0px;}
+}

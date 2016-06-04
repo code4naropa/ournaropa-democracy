@@ -1,0 +1,20 @@
+<div id="ournaropa_decisions_mock_ups" class="container">
+
+  <%# spacing %>
+  <div class="section"></div>
+
+  <div class="row">
+
+    <div class="col s12">
+
+      <% decision = OurnaropaDecisions::Decision.new(
+      :author => "Naropa", :title => "ABC", :description => "abcdefghijkl",
+      :upvotes => 55, :downvotes => 20, :ends_at => Time.zone.now+16.minutes) %>
+
+      <%= render :partial => "ournaropa_decisions/mock_ups/render_decision",
+      :locals => {:decision => decision, :preview => true} %>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,125 @@
+<div id="ournaropa_planner_decisions" class="index container">
+  
+  <div class="row">
+
+    
+    <ul class="collapsible popout" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header active">
+          <div class="row">
+            <div class="col s8">
+              <h5><%= @decision.title %></h5>
+              <p class="author"><%= @decision.author %></p>
+            </div>
+            <div class="col s4">
+              <a class="waves-effect waves-light btn-floating btn-large red right"><i class="material-icons">thumb_down</i></a>
+              <a class="waves-effect waves-light btn-floating btn-large green right"><i class="material-icons">thumb_up</i></a>
+            </div>
+          </div>
+        </div>
+        <div class="collapsible-body"><p><%= @decision.description.gsub("\n", "<br/>").html_safe %></p></div>
+      </li>
+
+    </ul>
+    
+    <div class="divider"></div>
+
+    
+    <h3>Comments</h3>
+    <div class="row form">
+      <div class="col s12">
+        <div class="card white darken-1">
+          <div class="card-content ">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">title</i>
+                <input id="first_name" type="text">
+                <label for="first_name">Title</label>
+              </div>
+            </div>
+              
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">message</i>
+                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                <label for="icon_prefix2">Comment</label>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col s12 text-centered">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Add Comment
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </div>
+        
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="card white darken-1">
+          <div class="card-content ">
+            <span class="card-title">Great Idea</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+          </div>
+        </div>
+      </div>
+      
+            <div class="col s12">
+        <div class="card white darken-1">
+          <div class="card-content ">
+            <span class="card-title">Great Idea</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+          </div>
+        </div>
+      </div>
+      
+            <div class="col s12">
+        <div class="card white darken-1">
+          <div class="card-content ">
+            <span class="card-title">Great Idea</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+          </div>
+        </div>
+      </div>
+      
+            <div class="col s12">
+        <div class="card white darken-1">
+          <div class="card-content ">
+            <span class="card-title">Great Idea</span>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!--
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @decision.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @decision.description %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= @decision.author %>
+  </p>
+
+  <%= link_to 'Edit', edit_decision_path(@decision) %> |
+  <%= link_to 'Back', decisions_path %>
+-->
+  </div>
+
+</div>
