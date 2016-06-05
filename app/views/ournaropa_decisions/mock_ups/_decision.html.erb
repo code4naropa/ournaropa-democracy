@@ -1,0 +1,17 @@
+<%= render :partial => "ournaropa_decisions/mock_ups/render_author",
+:locals => {:author => decision.author} %>
+
+<div class="decision z-depth-2 link">
+  <div class="row">
+
+    <div class="col l12">
+      <%= render partial: "decision_content", object: decision, as: :decision %>
+    </div>
+
+    <div class="col l12">
+      <%= render partial: "decision_action", object: decision, as: :decision,
+          locals: {stack_vertically: false} %>
+    </div>
+
+  </div>
+</div>

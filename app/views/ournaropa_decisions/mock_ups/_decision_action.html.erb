@@ -1,0 +1,30 @@
+<%
+  if stack_vertically
+    css_class = "s12 left-align"
+  else
+    css_class = "s6 center-align"
+  end
+%>
+
+<div class="row actions-wrapper
+            <%= stack_vertically ? "stack_vertically" : "stack_horizontally" %>
+            ">
+  <div class="col <%= css_class %>">
+    <p class="green-text">
+      <button class="waves-effect waves-light btn-floating btn-large
+        green">
+        <i class="material-icons">thumb_up</i>
+      </button>
+      <span class="upvotes"><%= decision.upvotes %></span>
+    </p>
+  </div>
+  <div class="col <%= css_class %> ">
+    <p class="red-text">
+      <button class="waves-effect waves-light btn-floating btn-large
+        red">
+        <i class="material-icons">thumb_down</i>
+      </button>
+      <span class="upvotes"><%= decision.downvotes %></span>
+    </p>
+  </div>
+</div>

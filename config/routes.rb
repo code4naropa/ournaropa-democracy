@@ -1,7 +1,7 @@
 OurnaropaDecisions::Engine.routes.draw do
   #get 'mock_ups/index'
 
-  get 'decision/1', to: 'mock_ups#decision_1', as: "decision_1"
+  get 'decision/:id', to: 'mock_ups#show_decision', as: "decision"
 
   get 'mock_ups/decision_2'
 

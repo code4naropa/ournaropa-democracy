@@ -1,0 +1,14 @@
+<div class="content-wrapper">
+
+  <div class="content">
+    <p class="time right grey-text">
+      <i class="material-icons tiny">schedule</i>
+      <%= time_ago_in_words(decision.ends_at) %> left<br/>
+    </p>
+    <h3 class="no-margin-top">
+      <%= decision.title %>
+    </h3>
+    <p class=""><%= decision.description %></p>
+  </div>
+
+</div>

@@ -82,21 +82,40 @@
 
     }
 
-    // style the actions
+    // style the actions: vertical
     div.actions-wrapper {
       padding: 20px 20px 20px 0px;
+      margin: 0;
 
-      div.actions {
-        p {
-          margin: 0;
-          font-size: 1.5rem;
-          &:first-of-type {
-            margin-bottom: 9px;
-          }
-        }
+      p {
+        font-size: 1.5rem;
       }
 
     }
+
+    div.actions-wrapper.stack_vertically {
+      padding: 15px 20px 15px 0px;
+
+      .col, p {
+        float: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      & > .col:first-of-type {
+        margin-bottom: 160px - 2*15px - 2*55.5px;
+      }
+
+    }
+
+    div.actions-wrapper.stack_horizontally {
+      @extend .grey, .lighten-5;
+      border-top: 1px solid lightgray;
+      p {
+        margin: 10px;
+      }
+    }
+
 
   }
 
