@@ -1,14 +1,14 @@
 <div id="ournaropa_planner_decisions" class="index container">
-  
+
   <p id="notice"><%= notice %></p>
 
   <div class="row">
-        
+
   <h1>Official Decisions</h1>
 
     <ul class="collapsible popout" data-collapsible="accordion">
     <% @decisions.each do |decision| %>
-      
+
         <li>
           <div class="collapsible-header">
             <div class="row">
@@ -17,18 +17,24 @@
                 <p class="author"><%= decision.author %></p>
               </div>
               <div class="col s4">
-                <a class="waves-effect waves-light btn-floating btn-large red right"><i class="material-icons">thumb_down</i></a>
-                <a class="waves-effect waves-light btn-floating btn-large green right"><i class="material-icons">thumb_up</i></a>
+                <a class="waves-effect waves-light btn-floating btn-large red
+                right">
+                  <i class="material-icons">thumb_down</i>
+                </a>
+                <a class="waves-effect waves-light btn-floating btn-large green
+                right">
+                  <i class="material-icons">thumb_up</i>
+                </a>
               </div>
             </div>
           </div>
           <div class="collapsible-body"><p><%= decision.description.gsub("\n", "<br/>").html_safe %></p></div>
         </li>
-    
+
     <% end %>
     </ul>
-    
-    
+
+
     <!--<table>
       <thead>
         <tr>
@@ -54,14 +60,14 @@
     </table>-->
 
   </div>
-  
-  
+
+
     <div class="divider"></div>
 
   <h1>Community Proposals</h1>
-  
+
   <div class="row">
-  
+
 
     <ul class="collapsible popout" data-collapsible="accordion">
       <li>
@@ -80,11 +86,11 @@
         <div class="collapsible-body"><p>blablabla</p></div>
       </li>
       </ul>
-    
+
   </div>
 
-  
-  <%#= link_to 'New Decision', new_decision_path 
+
+  <%#= link_to 'New Decision', new_decision_path
 %>
 
 

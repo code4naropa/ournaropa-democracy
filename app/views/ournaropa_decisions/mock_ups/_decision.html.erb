@@ -5,7 +5,8 @@
   <div class="row">
 
     <div class="col l12">
-      <%= render partial: "decision_content", object: decision, as: :decision %>
+      <%= render partial: "decision_content", object: decision, as: :decision,
+          locals: {preview: false} %>
     </div>
 
     <div class="col l12">

@@ -7,7 +7,7 @@
     <div class="col l10">
       <%= link_to decision_path(decision.id), :class => "open-decision" do %>
         <%= render partial: "decision_content", object: decision,
-            as: :decision %>
+            as: :decision, locals: {preview: true} %>
       <% end %>
     </div>
 

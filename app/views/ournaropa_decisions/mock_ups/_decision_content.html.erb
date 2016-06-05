@@ -8,7 +8,14 @@
     <h3 class="no-margin-top">
       <%= decision.title %>
     </h3>
-    <p class=""><%= decision.description %></p>
+    <p>
+      <%= # put description
+      if preview
+        strip_tags(decision.description).truncate_words(50)
+      else
+        simple_format decision.description, {}, :sanitize => false
+      end %>
+    </p>
   </div>
 
 </div>

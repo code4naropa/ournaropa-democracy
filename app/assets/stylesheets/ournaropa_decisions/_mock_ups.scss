@@ -40,6 +40,8 @@
   // style the decision
   .decision {
 
+    a.link { font-weight: bold; }
+
     // change box shadow on hover
     /*&.link:hover {
       box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.5),
@@ -116,22 +118,6 @@
       }
     }
 
-
-  }
-
-
-  // add new reply: reduce whitespace
-  .reply .input-field {
-    margin-top: 0px;
-  }
-
-  a.open-decision .topic{
-
-
-
-    .content h3, p {
-      transition: all .3s;
-    }
   }
 
   // style the author icon
@@ -147,34 +133,55 @@
   }
 
 
-  .topic, .reply {
+}
 
 
+#ournaropa_decisions_mock_ups {
 
+  // reasons
+  #reasons_section {
 
+    $reason_border_radius: 15px;
 
-    .content {
+    // general reason
+    .reason {
+      border-radius: $reason_border_radius;
 
+      & > div {
+        padding: 20px;
+      }
+
+      & > div.action {
+        height: 62.5px;
+        border-top-right-radius: $reason_border_radius;
+        border-bottom-right-radius: $reason_border_radius;
+
+        i {
+          position: relative;
+          margin-top: -6px;
+          top: 6px;
+        }
+      }
     }
 
-    h3, h4 {
-      margin-top: 0px;
-      color: black;
+    // reason: in_favor
+    .reason.in_favor {
+      @extend .green-text, .text-darken-1;
+      div.action {
+        @extend .green;
+        @extend .white-text;
+      }
     }
 
-    p {
-      margin-bottom: 0px;
+    // reason: opposed
+    .reason.opposed {
+      @extend .red-text, .text-darken-1;
+      div.action {
+        @extend .red;
+        @extend .white-text;
+      }
     }
 
-    a {
-      color: $highlight_color;
-    }
-  }
-
-  .reply-wrapper{
-    .reply, .author {
-      margin-left: 50px;
-    }
   }
 
 }

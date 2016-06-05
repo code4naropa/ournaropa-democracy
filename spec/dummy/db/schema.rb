@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425234344) do
+ActiveRecord::Schema.define(version: 20160605085752) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "ournaropa_decisions_decisions", force: :cascade do |t|
     t.string   "title"
@@ -19,6 +22,11 @@ ActiveRecord::Schema.define(version: 20160425234344) do
     t.string   "author"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "ournaropa_decisions_reasons", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

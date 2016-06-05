@@ -3,13 +3,57 @@
   <%# spacing %>
   <div class="section"></div>
 
+  <%# render the decision %>
   <div class="row">
-
     <div class="col s12">
 
       <%= render partial: "ournaropa_decisions/mock_ups/decision",
           object: @decision %>
 
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <%# render the reasons %>
+  <div id="reasons_section" class="row">
+    <div class="col s12">
+      <h4>What matters to our community?</h4>
+
+      <div class="row">
+
+        <div class="col s12 m6">
+          <%# reasons for being in favor %>
+          <%= render partial: "ournaropa_decisions/mock_ups/reason",
+              collection: @reasons_for %>
+        </div>
+
+        <div class="col s12 m6">
+          <%# reasons for being opposed %>
+          <%= render partial: "ournaropa_decisions/mock_ups/reason",
+              collection: @reasons_against %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <%# render the alternatives %>
+  <div id="alternatives_section" class="row">
+    <div class="col s12">
+      <h4>What are alternative ideas?</h4>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <%# render the discussion %>
+  <div id="alternatives_section" class="row">
+    <div class="col s12">
+      <h4>Discussion</h4>
     </div>
   </div>
 

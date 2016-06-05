@@ -1,0 +1,21 @@
+<%
+  if reason.in_favor
+    css_class = "in_favor"
+  else
+    css_class = "opposed"
+  end
+%>
+
+<div class="row">
+  <div class="col s12">
+    <div class="reason <%= css_class %> z-depth-1">
+      <div class="right action waves-effect waves-light">
+        <span class="count"><%= reason.votes %></span>
+        <i class="material-icons">favorite</i>
+      </div>
+      <div>
+        <%= reason.text %>
+      </div>
+    </div>
+  </div>
+</div>
