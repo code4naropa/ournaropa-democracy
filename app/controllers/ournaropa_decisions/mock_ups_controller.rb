@@ -13,12 +13,17 @@ module OurnaropaDecisions
       case params[:id]
         when "1"
           @decision = bikeshack
+          init_bikeshack_reasons
+          init_bikeshack_alternatives
+          init_bikeshack_comments
         when "2"
           @decision = cafe
+          init_cafe_reasons
+          init_cafe_alternatives
+          init_cafe_comments
       end
-      @decision.description += "\n...\n...\n\n<b>Disclaimer: This is sample text - I" +
-      " do not know actual details.</b>"
-      init_bikeshack_reasons
+      @decision.description += "\n...\n..."
+
     end
 
     private
@@ -69,6 +74,64 @@ module OurnaropaDecisions
       :votes => 4)
     end
 
+    def init_bikeshack_alternatives
+      @alternatives = []
+      @alternatives << OurnaropaDecisions::Decision.new(
+      :id => 1,
+      :author => "Edan",
+      :title => "Let Students Run the Bike Shack",
+      :description =>
+      "Why don't we let students run the bike shack? That reduces costs and" +
+      " would even provide additional student employment opportunities. I am" +
+      " also willing to volunteer three times a week, if that makes a " +
+      " difference.",
+      :upvotes => 87,
+      :downvotes => 0,
+      :created_at => Time.new(2016, 6, 1, 0, 0, 0))
+    end
+
+    def init_bikeshack_comments
+      @comments = []
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "Edan",
+      :description =>
+      "I bike to school every day and I absolutely rely on the bike shack" +
+      " to repair my bike. Don't close it!!",
+      :created_at => Time.new(2016, 6, 1, 0, 0, 0))
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "Holly",
+      :description =>
+      "The bike shack has taught me incredibly valuable skills. I have not " +
+      " only learned" +
+      " how to put together a bike and how to fix a flat tire, but also " +
+      " gained a deep understanding for the mechanics of how a bike works." +
+      " \n\nThrough that I realized how passionate I am about hands-on," +
+      " manual labor and I've just a few months ago started volunteering" +
+      " in a bike workshop for children. All of that would never have" +
+      " happened without the bike shack.",
+      :created_at => Time.new(2016, 6, 1, 0, 0, 0))
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "User",
+      :description =>
+      "SAMPLE // SAMPLE // SAMPLE",
+      :created_at => Time.new(2016, 5, 29, 0, 0, 0))
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "User",
+      :description =>
+      "SAMPLE // SAMPLE // SAMPLE",
+      :created_at => Time.new(2016, 5, 25, 0, 0, 0))
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "User",
+      :description =>
+      "SAMPLE // SAMPLE // SAMPLE",
+      :created_at => Time.new(2016, 5, 24, 0, 0, 0))
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "User",
+      :description =>
+      "SAMPLE // SAMPLE // SAMPLE",
+      :created_at => Time.new(2016, 5, 19, 0, 0, 0))
+    end
+
     def cafe
       return OurnaropaDecisions::Decision.new(
       :id => 2,
@@ -91,6 +154,53 @@ module OurnaropaDecisions
       :downvotes => 3,
       :ends_at => Time.new(2016, 8, 31, 0, 0, 0))
     end
+
+    def init_cafe_reasons
+      @reasons_for = []
+      @reasons_for << OurnaropaDecisions::Reason.new(
+      :in_favor => true,
+      :text => "I like supporting non-profits",
+      :votes => 108)
+      @reasons_for << OurnaropaDecisions::Reason.new(
+      :in_favor => true,
+      :text => "Transparency matters to me",
+      :votes => 78)
+      @reasons_for << OurnaropaDecisions::Reason.new(
+      :in_favor => true,
+      :text => "...",
+      :votes => 23)
+
+      @reasons_against = []
+    end
+
+    def init_cafe_alternatives
+      @alternatives = []
+    end
+
+    def init_cafe_comments
+      @comments = []
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "User",
+      :description =>
+      "SAMPLE // SAMPLE // SAMPLE",
+      :created_at => Time.new(2016, 5, 29, 0, 0, 0))
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "User",
+      :description =>
+      "SAMPLE // SAMPLE // SAMPLE",
+      :created_at => Time.new(2016, 5, 25, 0, 0, 0))
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "User",
+      :description =>
+      "SAMPLE // SAMPLE // SAMPLE",
+      :created_at => Time.new(2016, 5, 24, 0, 0, 0))
+      @comments << OurnaropaDecisions::Decision.new(
+      :author => "User",
+      :description =>
+      "SAMPLE // SAMPLE // SAMPLE",
+      :created_at => Time.new(2016, 5, 19, 0, 0, 0))
+    end
+
 
   end
 end

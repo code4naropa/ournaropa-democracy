@@ -1,0 +1,26 @@
+<%= render :partial => "ournaropa_decisions/mock_ups/render_author",
+:locals => {:author => comment.author, :small => true} %>
+
+<div class="alternative z-depth-1 link">
+  <div class="row">
+
+    <div class="col s12 l12">
+
+      <div class="content-wrapper">
+
+        <div class="content">
+          <p class="time right grey-text">
+            <i class="material-icons tiny">schedule</i>
+            <%= time_ago_in_words(comment.created_at) %> ago<br/>
+          </p>
+            <%= # put description
+              simple_format comment.description, {}, :sanitize => false
+            %>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

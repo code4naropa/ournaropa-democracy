@@ -26,12 +26,20 @@
           <%# reasons for being in favor %>
           <%= render partial: "ournaropa_decisions/mock_ups/reason",
               collection: @reasons_for %>
+
+          <div class="center-align">
+            <a class="waves-effect waves-light btn green white-text "><i class="material-icons left">add</i>Add Reason</a>
+          </div>
         </div>
 
         <div class="col s12 m6">
           <%# reasons for being opposed %>
           <%= render partial: "ournaropa_decisions/mock_ups/reason",
               collection: @reasons_against %>
+
+          <div class="center-align">
+            <a class="waves-effect waves-light btn red white-text "><i class="material-icons left">add</i>Add Reason</a>
+          </div>
         </div>
 
       </div>
@@ -44,16 +52,20 @@
   <%# render the alternatives %>
   <div id="alternatives_section" class="row">
     <div class="col s12">
+
       <h4>What are alternative ideas?</h4>
 
       <div class="row">
+        <div class="col s12">
 
-        <div class="col s12 m6">
-          <%# reasons for being in favor %>
-          <%= render partial: "ournaropa_decisions/mock_ups/reason",
-              collection: @reasons_for %>
+          <% if not @alternatives.any? %>
+            <p>No alternative ideas have been suggested.</p>
+          <% end %>
+
+          <%= render partial: "ournaropa_decisions/mock_ups/preview_alternative",
+              collection: @alternatives, as: :alternative %>
+
         </div>
-
       </div>
 
     </div>
@@ -62,10 +74,37 @@
   <div class="divider"></div>
 
   <%# render the discussion %>
-  <div id="alternatives_section" class="row">
+  <div id="discussion_section" class="row">
     <div class="col s12">
+
       <h4>Discussion</h4>
+
+      <div class="row">
+        <div class="col s12 m12 l12 new_comment">
+          <%= render partial: "ournaropa_decisions/mock_ups/new_comment" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+
+          <%= render partial: "ournaropa_decisions/mock_ups/comment",
+              collection: @comments, as: :comment %>
+
+        </div>
+      </div>
+
     </div>
   </div>
 
 </div>
+
+<script>
+
+  $("#add_comment_button").hide(0);
+
+  $(".new_comment").click(function() {
+    $(this).addClass("active");
+    $("#add_comment_button").slideDown();
+  });
+</script>

@@ -1,0 +1,55 @@
+<%
+  if stack_vertically
+    css_class = "m6 l12 left-align"
+  else
+    css_class = "s6 center-align"
+  end
+%>
+
+<%# add vertically-stacked actions if in vertical mode %>
+<% if stack_vertically %>
+<div class="row actions-wrapper stack_vertically hide-on-med-and-down">
+  <div class="col l12 left-align">
+    <p class="green-text">
+      <button class="waves-effect waves-light btn-floating
+        green">
+        <i class="material-icons">thumb_up</i>
+      </button>
+      <span class="upvotes"><%= alternative.upvotes %></span>
+    </p>
+  </div>
+  <div class="col l12 left-align">
+    <p class="red-text">
+      <button class="waves-effect waves-light btn-floating
+        red">
+        <i class="material-icons">thumb_down</i>
+      </button>
+      <span class="upvotes"><%= alternative.downvotes %></span>
+    </p>
+  </div>
+</div>
+<% end %>
+
+<%# always add horizontal actions %>
+<div class="row actions-wrapper stack_horizontally
+            <%= stack_vertically ? "hide-on-large-only" : "" %>
+            ">
+  <div class="col s6 center-align">
+    <p class="green-text">
+      <button class="waves-effect waves-light btn-floating
+        green">
+        <i class="material-icons">thumb_up</i>
+      </button>
+      <span class="upvotes"><%= alternative.upvotes %></span>
+    </p>
+  </div>
+  <div class="col s6 center-align">
+    <p class="red-text">
+      <button class="waves-effect waves-light btn-floating
+        red">
+        <i class="material-icons">thumb_down</i>
+      </button>
+      <span class="upvotes"><%= alternative.downvotes %></span>
+    </p>
+  </div>
+</div>

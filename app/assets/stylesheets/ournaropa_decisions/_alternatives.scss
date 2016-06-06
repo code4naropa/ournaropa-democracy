@@ -1,0 +1,97 @@
+@import "init";
+@import "materialize/components/color";
+
+#ournaropa_decisions_mock_ups {
+
+  // style the decision
+  .alternative {
+
+    a.link { font-weight: bold; }
+
+    // change box shadow on hover
+    /*&.link:hover {
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.5),
+                  0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      transition: all .3s;
+    }*/
+
+    // style the link
+    a.open-alternative {
+      color: inherit;
+
+      * { transition: all .3s; }
+
+      &:hover .content-wrapper{
+        background-color: lighten($primary-color, 10%);
+        color: white;
+        //@extend .purple, .lighten-1;
+        //@extend .white-text;
+        //transform: scale(1.02);
+        //background-color: color()
+
+        .content h3, p {
+          @extend .white-text;
+        }
+
+      }
+    }
+
+    // style the content
+    div.content-wrapper {
+      padding: 15px 15px 15px 75px;
+      min-height: 104px;
+
+      div.content {
+        .time {
+          position: relative;
+          margin-top: 0px;
+        }
+      }
+
+    }
+
+    // style the actions: vertical
+    div.actions-wrapper {
+      padding: 0px;
+      margin: 0;
+    }
+
+    div.actions-wrapper.stack_vertically {
+      padding: 10px 15px 10px 0px;
+
+      .col, p {
+        float: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      & > .col:first-of-type {
+        margin-bottom: 104px - 2*10px - 2*37px;
+      }
+
+    }
+
+    div.actions-wrapper.stack_horizontally {
+      @extend .grey, .lighten-5;
+      border-top: 1px solid lightgray;
+      p {
+        margin: 10px;
+      }
+    }
+
+  }
+
+  // style the author icon
+  $author_width: 150px;
+  .author {
+
+    width: $author_width;
+    position: relative;
+    left: -75px;
+    margin-right: - $author_width;
+    top: 10px;
+    float: left;
+  }
+
+
+}

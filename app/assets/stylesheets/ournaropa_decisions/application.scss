@@ -3,6 +3,11 @@
 
 #ournaropa_decisions {
 
+  #mock_up_warning {
+    .add_padding { padding: 20px;}
+    #close_mock_up_warning {cursor:pointer;}
+  }
+
   .primary-color {
     background-color: $primary_color;
   }
@@ -11,7 +16,7 @@
     color: $primary_color;
   }
 
-  .waves-effect.primary-color .waves-ripple {
+  .waves-effect.waves-primary-color .waves-ripple {
      /* The alpha value allows the text and background color
      of the button to still show through. */
       background-color: transparentize($primary_color, .35);
@@ -86,7 +91,7 @@
   }
 
   // remove margin from bottom of row
-  .row.no-margin-bottom {
+  .no-margin-bottom {
     margin-bottom: 0px !important;
   }
 
@@ -114,3 +119,4 @@
 }
 
 @import "mock_ups";
+@import "alternatives";

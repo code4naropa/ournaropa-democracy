@@ -1,0 +1,21 @@
+<div class="content-wrapper">
+
+  <div class="content">
+    <p class="time right grey-text">
+      <i class="material-icons tiny">schedule</i>
+      <%= time_ago_in_words(alternative.created_at) %> ago<br/>
+    </p>
+    <p class="no-margin-top no-margin-bottom">
+      <b><%= alternative.title %></b>
+    </p>
+    <p class="no-margin-top no-margin-bottom">
+      <%= # put description
+      if preview
+        strip_tags(alternative.description).truncate_words(30)
+      else
+        simple_format alternative.description, {}, :sanitize => false
+      end %>
+    </p>
+  </div>
+
+</div>

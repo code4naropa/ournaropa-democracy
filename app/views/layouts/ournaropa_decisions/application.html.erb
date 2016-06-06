@@ -31,6 +31,28 @@
   </div>
 </nav>
 
+<div class="section"></div>
+
+<div id="mock_up_warning" class="container deep-orange darken-4 white-text">
+  <div class="row">
+    <div class="col s12">
+      <div class="add_padding z-depth-3">
+        <div class="row">
+          <div class="col s3 m2 l1 center-align">
+            <i class="material-icons medium">warning</i>
+          </div>
+          <div class="col s9 m10 l11 left-align">
+            <i id="close_mock_up_warning" class="material-icons right">close</i>
+            <b>Disclaimer:</b><br/>This is a mock-up of what a web app for community
+            decision-making could look like. It is non-interactive and most buttons
+            have no functionality. All data is entirely made-up.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <%= yield %>
 
 <% # if there is a notice, display for 5 seconds
@@ -43,6 +65,9 @@
 <!-- Initialize mobile menu -->
 <script type="text/javascript">
   $(".button-collapse").sideNav();
+  $("#close_mock_up_warning").click(function() {
+    $("#mock_up_warning").slideUp();
+  });
 </script>
 
 </body>
