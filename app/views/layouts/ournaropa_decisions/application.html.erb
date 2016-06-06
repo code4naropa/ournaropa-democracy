@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>The Cushion - Empowering Community Collaboration</title>
-  
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,18 +18,18 @@
       <%= link_to "The Cushion", root_path, :class => "brand-logo" %>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-desktop" class="right hide-on-med-and-down">
-        <li><%= link_to "#" do %><i class="material-icons left">build</i>Manage Decisions<% end %></li>
-        <li><%= link_to "#" do %><%= image_tag "#", class: "responsive-img circle" %> Hi, Cheryl!<% end %></li>
+        <!--<li><%= link_to "#" do %><i class="material-icons left">build</i>Manage Decisions<% end %></li>-->
+        <li><%= link_to "#" do %><%= image_tag "ournaropa_decisions/user.jpg", class: "responsive-img circle" %> Hi, User!<% end %></li>
         <li><%= link_to "#" do %><i class="material-icons left">power_settings_new</i>Log Out<% end %></li>
       </ul>
       <ul class="side-nav" id="nav-mobile">
-        <li><%= link_to "#" do %><i class="material-icons left">build</i>Manage Decisions<% end %></li>
-        <li><%= link_to "#" do %><%= image_tag "#", class: "responsive-img circle" %> Hi, Cheryl!<% end %></li>
+        <!--<li><%= link_to "#" do %><i class="material-icons left">build</i>Manage Decisions<% end %></li>-->
+        <li><%= link_to "#" do %><%= image_tag "ournaropa_decisions/user.jpg", class: "responsive-img circle" %> Hi, User!<% end %></li>
         <li><%= link_to "#" do %><i class="material-icons left">power_settings_new</i>Log Out<% end %></li>
       </ul>
     </div>
   </div>
-</nav>  
+</nav>
 
 <%= yield %>
 
@@ -39,11 +39,11 @@
     Materialize.toast("<%= escape_javascript notice %>", 5000) // 4000 is the duration of the toast
   </script>
 <% end %>
-  
-<!-- Initialize mobile menu -->  
+
+<!-- Initialize mobile menu -->
 <script type="text/javascript">
-  $(".button-collapse").sideNav();  
-</script>  
-  
+  $(".button-collapse").sideNav();
+</script>
+
 </body>
 </html>

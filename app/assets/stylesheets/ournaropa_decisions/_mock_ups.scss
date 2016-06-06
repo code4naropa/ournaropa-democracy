@@ -5,6 +5,13 @@
 
   // style the author icon
   .author {
+
+    pointer-events: none;
+
+    & > * {
+      pointer-events: all;
+    }
+
     img {
       width: 80px;
       margin: 0 auto;
@@ -53,7 +60,7 @@
     a.open-decision {
       color: inherit;
 
-      .content-wrapper { transition: all .3s; }
+      * { transition: all .3s; }
 
       &:hover .content-wrapper{
         background-color: lighten($primary-color, 10%);

@@ -4,14 +4,14 @@
 <div class="decision z-depth-2 link">
   <div class="row">
 
-    <div class="col l10">
+    <div class="col m12 l9">
       <%= link_to decision_path(decision.id), :class => "open-decision" do %>
         <%= render partial: "decision_content", object: decision,
             as: :decision, locals: {preview: true} %>
       <% end %>
     </div>
 
-    <div class="col l2">
+    <div class="col m12 l3">
       <%= render partial: "decision_action", object: decision, as: :decision,
           locals: {stack_vertically: true} %>
     </div>

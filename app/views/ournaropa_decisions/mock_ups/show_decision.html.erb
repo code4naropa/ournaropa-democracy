@@ -45,6 +45,17 @@
   <div id="alternatives_section" class="row">
     <div class="col s12">
       <h4>What are alternative ideas?</h4>
+
+      <div class="row">
+
+        <div class="col s12 m6">
+          <%# reasons for being in favor %>
+          <%= render partial: "ournaropa_decisions/mock_ups/reason",
+              collection: @reasons_for %>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
