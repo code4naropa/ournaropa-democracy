@@ -37,7 +37,7 @@
   <div class="row">
     <div class="col s12">
       <div class="add_padding z-depth-3">
-        <div class="row">
+        <div class="row no-margin-bottom">
           <div class="col s3 m2 l1 center-align">
             <i class="material-icons medium">warning</i>
           </div>
@@ -46,6 +46,66 @@
             <b>Disclaimer:</b><br/>This is a mock-up of what a web app for community
             decision-making could look like. It is non-interactive and most buttons
             have no functionality. All data is entirely made-up.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="mock_up_feedback" class="container blue white-text clickable">
+  <div class="row">
+    <div class="col s12">
+      <div class="add_padding z-depth-3">
+        <div class="row no-margin-bottom">
+          <div class="col s3 m2 l1 center-align">
+            <i id="fb_icon" class="material-icons medium">message</i>
+          </div>
+          <div class="col s9 m10 l11 left-align">
+            <i id="close_mock_up_feedback" class="material-icons right">close</i>
+            <b id="fb_title">What do you think?</b><br/>Your feedback will help shape this
+            platform.
+
+            <div class="row no-margin-bottom">
+              <%= form_for @feedback, url: submit_feedback_path, remote: true, html: {class: "col s12 text-white"} do |f| %>
+
+                <div class="section"></div>
+
+<!--                <div class="divider"></div>
+
+                <div class="section"></div>-->
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <%= f.text_area :content, class: "materialize-textarea" %>
+                    <%= f.label :content, "I think..." %>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12 m6">
+                    <%= f.email_field :email %>
+                    <%= f.label :email, "Email (Optional)" %>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <p>
+                      <%= f.check_box :wants_to_stay_informed %>
+                      <%= f.label :wants_to_stay_informed, "Please keep me posted about future developments." %>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s12 right-align">
+                    <button class="btn-flat waves-effect waves-light white-text" type="submit" name="action">Submit
+                      <i class="material-icons right">send</i>
+                    </button>
+                  </div>
+                </div>
+
+              <% end %>
+            </div>
+
           </div>
         </div>
       </div>
@@ -65,8 +125,20 @@
 <!-- Initialize mobile menu -->
 <script type="text/javascript">
   $(".button-collapse").sideNav();
-  $("#close_mock_up_warning").click(function() {
+  $("#close_mock_up_warning").click(function(event) {
+    event.stopPropagation();
     $("#mock_up_warning").slideUp();
+  });
+
+  $("#mock_up_feedback form").hide(0);
+
+  $("#close_mock_up_feedback").click(function(event) {
+    event.stopPropagation();
+    $("#mock_up_feedback").slideUp();
+  });
+  $("#mock_up_feedback").click(function() {
+    $(this).removeClass("clickable");
+    $("#mock_up_feedback form").slideDown();
   });
 </script>
 

@@ -7,6 +7,8 @@ OurnaropaDecisions::Engine.routes.draw do
 
   get 'mock_ups/decision_3'
 
+  match '/submit_feedback', to: 'mock_ups#submit_feedback', as: "submit_feedback", via: :post
+
   #resources :decisions
 
   root :to => "mock_ups#index"

@@ -2,6 +2,15 @@ require_dependency "ournaropa_decisions/application_controller"
 
 module OurnaropaDecisions
   class MockUpsController < ApplicationController
+    before_action :new_feedback
+
+    def submit_feedback
+      feedback = Feedback.create(params.require(:feedback).permit(:content, :email, :wants_to_stay_informed))
+
+      # email Finn
+      Notifications.feedback(feedback).deliver_later
+
+    end
 
     def index
       @decisions = [bikeshack, cafe]
@@ -201,6 +210,9 @@ module OurnaropaDecisions
       :created_at => Time.new(2016, 5, 19, 0, 0, 0))
     end
 
+    def new_feedback
+      @feedback = Feedback.new
+    end
 
   end
 end
