@@ -1,5 +1,7 @@
+@import "materialize/components/prefixer";
+@import "materialize/components/mixins";
 @import "materialize/components/color";
-@import "materialize";
+@import "materialize/components/variables";
 @import "init";
 
 #ournaropa_decisions {
