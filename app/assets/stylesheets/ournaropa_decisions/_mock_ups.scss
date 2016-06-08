@@ -210,7 +210,7 @@
       &:last-of-type {margin-bottom:0px;}
     }
 
-    .new_comment {
+    .new_comment:not(.show) {
       opacity: .3;
       transition: all .3s;
 

@@ -11,8 +11,8 @@
 <div class="row actions-wrapper stack_vertically hide-on-med-and-down">
   <div class="col l12 left-align">
     <p class="green-text">
-      <button class="waves-effect waves-light btn-floating btn-large
-        green">
+      <button data-target="d<%= decision.id %>_modal_upvote" class="waves-effect waves-light btn-floating btn-large
+        green modal-trigger">
         <i class="material-icons">thumb_up</i>
       </button>
       <span class="upvotes"><%= decision.upvotes %></span>
@@ -20,8 +20,8 @@
   </div>
   <div class="col l12 left-align">
     <p class="red-text">
-      <button class="waves-effect waves-light btn-floating btn-large
-        red">
+      <button data-target="d<%= decision.id %>_modal_downvote" class="waves-effect waves-light btn-floating btn-large
+        red modal-trigger">
         <i class="material-icons">thumb_down</i>
       </button>
       <span class="upvotes"><%= decision.downvotes %></span>
@@ -36,8 +36,8 @@
             ">
   <div class="col s6 center-align">
     <p class="green-text">
-      <button class="waves-effect waves-light btn-floating btn-large
-        green">
+      <button data-target="d<%= decision.id %>_modal_upvote" class="waves-effect waves-light btn-floating btn-large
+        green modal-trigger">
         <i class="material-icons">thumb_up</i>
       </button>
       <span class="upvotes"><%= decision.upvotes %></span>
@@ -45,11 +45,100 @@
   </div>
   <div class="col s6 center-align">
     <p class="red-text">
-      <button class="waves-effect waves-light btn-floating btn-large
-        red">
+      <button data-target="d<%= decision.id %>_modal_downvote" class="waves-effect waves-light btn-floating btn-large
+        red modal-trigger">
         <i class="material-icons">thumb_down</i>
       </button>
       <span class="upvotes"><%= decision.downvotes %></span>
     </p>
+  </div>
+</div>
+
+<div id="d<%= decision.id %>_modal_upvote" class="modal">
+  <div class="modal-content green white-text">
+    Vote successfully cast.
+  </div>
+  <div class="modal-content">
+    <h4>Why did you vote in favor of the proposal?</h4>
+    <p>Specifying your reasons helps others understand what matters to you. This allows our community to find alternative solutions to the current proposal that will fulfill everybody's needs.</p>
+    <%# render the reasons %>
+    <div id="reasons_section" class="row no-margin-bottom">
+      <div class="col s12">
+        <div class="row no-margin-bottom">
+
+          <div class="col s12 m6">
+            <%# reasons for being in favor %>
+            <%= render partial: "ournaropa_decisions/mock_ups/reason",
+                collection: decision.reasons_for %>
+
+            <div class="center-align">
+              <a class="waves-effect waves-light btn green white-text "><i class="material-icons left">add</i>Add Reason</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#d<%= decision.id %>_modal_comment" class=" modal-action modal-trigger modal-close waves-effect waves-green btn-flat">Save</a>
+  </div>
+</div>
+
+<div id="d<%= decision.id %>_modal_downvote" class="modal">
+  <div class="modal-content red white-text">
+    Vote successfully cast.
+  </div>
+  <div class="modal-content">
+    <h4>Why did you vote in favor of the proposal?</h4>
+    <p>Specifying your reasons helps others understand what matters to you. This allows our community to find alternative solutions to the current proposal that will fulfill everybody's needs.</p>
+    <%# render the reasons %>
+    <div id="reasons_section" class="row no-margin-bottom">
+      <div class="col s12">
+        <div class="row no-margin-bottom">
+
+          <div class="col s12 m6">
+            <%# reasons for being in favor %>
+            <%= render partial: "ournaropa_decisions/mock_ups/reason",
+                collection: decision.reasons_against %>
+
+            <div class="center-align">
+              <a class="waves-effect waves-light btn red white-text "><i class="material-icons left">add</i>Add Reason</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#d<%= decision.id %>_modal_comment" class=" modal-action modal-trigger modal-close waves-effect waves-green btn-flat">Save</a>
+  </div>
+</div>
+
+<div id="d<%= decision.id %>_modal_comment" class="modal">
+  <div class="modal-content blue white-text">
+    Reasons saved.
+  </div>
+  <div class="modal-content">
+    <h4>Add your personal story</h4>
+    <p>Adding a recount of your own perspective, experiences, and opinions helps others understand where you are coming from, builds mutual understanding, and strengthens our community.</p>
+    <%# render the discussion %>
+    <div id="discussion_section" class="row no-margin-bottom">
+      <div class="col s12">
+
+        <div class="row no-margin-bottom">
+          <div class="col s10 push-s1 new_comment show">
+            <%= render partial: "ournaropa_decisions/mock_ups/new_comment" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Finish</a>
   </div>
 </div>

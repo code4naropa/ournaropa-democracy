@@ -14,6 +14,8 @@ module OurnaropaDecisions
 
     def index
       @decisions = [bikeshack, cafe]
+
+      init_bikeshack_reasons
     end
 
     # shows decision with a given ID
@@ -38,6 +40,31 @@ module OurnaropaDecisions
     private
 
     def bikeshack
+
+      reasons_for = []
+      reasons_for << OurnaropaDecisions::Reason.new(
+      :in_favor => true,
+      :text => "The bike shack is too expensive",
+      :votes => 93)
+      reasons_for << OurnaropaDecisions::Reason.new(
+      :in_favor => true,
+      :text => "We could put something else in the space",
+      :votes => 13)
+
+      reasons_against = []
+      reasons_against << OurnaropaDecisions::Reason.new(
+      :in_favor => false,
+      :text => "I need a place to repair my bike",
+      :votes => 102)
+      reasons_against << OurnaropaDecisions::Reason.new(
+      :in_favor => false,
+      :text => "I want to learn about bike mechanics",
+      :votes => 21)
+      reasons_against << OurnaropaDecisions::Reason.new(
+      :in_favor => false,
+      :text => "I need a rental bike to get to school",
+      :votes => 4)
+
       return OurnaropaDecisions::Decision.new(
       :id => 1,
       :author => "Naropa",
@@ -54,7 +81,9 @@ module OurnaropaDecisions
       "\n- Only 15 bikes were built last year using the build-a-bike program",
       :upvotes => 41,
       :downvotes => 63,
-      :ends_at => Time.new(2016, 7, 1, 0, 0, 0))
+      :ends_at => Time.new(2016, 7, 1, 0, 0, 0),
+      :reasons_for => reasons_for,
+      :reasons_against => reasons_against)
     end
 
     def init_bikeshack_reasons
@@ -142,6 +171,23 @@ module OurnaropaDecisions
     end
 
     def cafe
+
+      reasons_for = []
+      reasons_for << OurnaropaDecisions::Reason.new(
+      :in_favor => true,
+      :text => "I like supporting non-profits",
+      :votes => 108)
+      reasons_for << OurnaropaDecisions::Reason.new(
+      :in_favor => true,
+      :text => "Transparency matters to me",
+      :votes => 78)
+      reasons_for << OurnaropaDecisions::Reason.new(
+      :in_favor => true,
+      :text => "...",
+      :votes => 23)
+
+      reasons_against = []
+
       return OurnaropaDecisions::Decision.new(
       :id => 2,
       :author => "Naropa",
@@ -161,7 +207,9 @@ module OurnaropaDecisions
       " their metrics with us",
       :upvotes => 212,
       :downvotes => 3,
-      :ends_at => Time.new(2016, 8, 31, 0, 0, 0))
+      :ends_at => Time.new(2016, 8, 31, 0, 0, 0),
+      :reasons_for => reasons_for,
+      :reasons_against => reasons_against)
     end
 
     def init_cafe_reasons

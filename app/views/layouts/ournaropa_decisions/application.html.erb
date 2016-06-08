@@ -122,23 +122,40 @@
   </script>
 <% end %>
 
+<!-- Modal Structure -->
+<div id="modal" class="modal">
+</div>
+
 <!-- Initialize mobile menu -->
 <script type="text/javascript">
-  $(".button-collapse").sideNav();
-  $("#close_mock_up_warning").click(function(event) {
-    event.stopPropagation();
-    $("#mock_up_warning").slideUp();
-  });
 
-  $("#mock_up_feedback form").hide(0);
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
 
-  $("#close_mock_up_feedback").click(function(event) {
-    event.stopPropagation();
-    $("#mock_up_feedback").slideUp();
-  });
-  $("#mock_up_feedback").click(function() {
-    $(this).removeClass("clickable");
-    $("#mock_up_feedback form").slideDown();
+    /*$('.modal-trigger').click(function() {
+      decision_id = $(this).parents("div.decision").attr('id');
+      $("#modal").html($("#"+decision_id+"_modal_content").html())
+      $('#modal').openModal();
+    });*/
+
+
+    $(".button-collapse").sideNav();
+    $("#close_mock_up_warning").click(function(event) {
+      event.stopPropagation();
+      $("#mock_up_warning").slideUp();
+    });
+
+    $("#mock_up_feedback form").hide(0);
+
+    $("#close_mock_up_feedback").click(function(event) {
+      event.stopPropagation();
+      $("#mock_up_feedback").slideUp();
+    });
+    $("#mock_up_feedback").click(function() {
+      $(this).removeClass("clickable");
+      $("#mock_up_feedback form").slideDown();
+    });
   });
 </script>
 

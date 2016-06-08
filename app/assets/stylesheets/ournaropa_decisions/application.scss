@@ -191,6 +191,12 @@
     margin-top:0px;
   }
 
+  h4 > i.material-icons.medium {
+    position: relative;
+    margin-top: -10px;
+    top: 14px;
+  }
+
 }
 
 @import "mock_ups";
